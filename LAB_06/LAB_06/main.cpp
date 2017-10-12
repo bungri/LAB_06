@@ -78,12 +78,28 @@ void main()
 	cout << "eaDate (before quick_sorting) : "; eaDate.print(cout); cout << endl;
 	eaDate.quickSort();
 	cout << "eaDate (after quick_sorting) : "; eaDate.print(cout); cout << endl;
+	eaDBL_A.~T_ExpandableArray();
+	eaDBL_B.~T_ExpandableArray();
+	eaDBL_C.~T_ExpandableArray();
+	eaInt.~T_ExpandableArray();
+	eaDate.~T_ExpandableArray();
 }//end-main
 
 //function bodies
 bool isLeapYear(int y)
 {
-	//. . . .
+	if (y % 4 == 0)
+	{
+		if (y % 100 == 0)
+		{
+			if (y % 400 == 0)
+				return true;
+			else
+				return false;
+		}
+		return true;
+	}
+	return false;
 }
 
 Date genRandDate()
